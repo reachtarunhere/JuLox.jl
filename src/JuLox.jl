@@ -17,13 +17,10 @@ function run_prompt()
     while true
         print("JuLox> ")
         flush(stdout)
-        line = readline()
-        isempty(line) && eof(stdin) && break
-        println(line)
+        line = readline(keep=true)
+        isempty(line) && break
+        run(rstrip(line))
     end
 end
-
-# eof is blocking so it is not possible to use it in a while loop
-# condition. TODO: sill buggy behaviour with empty line and then typing
 
 end
