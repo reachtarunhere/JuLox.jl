@@ -1,5 +1,7 @@
 module JuLox
 
+include("scanner.jl")
+
 run_file(path) = run(read(path))
 
 function main(args)
