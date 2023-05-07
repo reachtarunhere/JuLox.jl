@@ -20,7 +20,7 @@ function run_prompt()
         flush(stdout)
         line = readline(keep=true)
         isempty(line) && break
-        run(rstrip(line))
+        run(rstrip(line)) # TODO: handle gracefully when run finds syntax error
     end
 end
 
@@ -48,4 +48,12 @@ julox_logo = raw"""
 # logo credits: https://patorjk.com/software/taag/#p=display&f=3D%20Diagonal&t=JuLox
 
 
+function run(code)
+    has_error = false # TODO: replace this with some real checking
+    has_error && exit(65)
+end
+
+report_error(line_no, message) = println("[line $line_no] Error: $message")
+
+    
 end
