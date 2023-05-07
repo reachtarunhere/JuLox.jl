@@ -14,6 +14,7 @@ function main(args)
 end
 
 function run_prompt()
+    print(julox_logo)
     while true
         print("JuLox> ")
         flush(stdout)
@@ -22,5 +23,29 @@ function run_prompt()
         run(rstrip(line))
     end
 end
+
+# TODO: Generate a nice ascii art splash screen using ChatGPT
+
+julox_logo = raw"""
+                                  ,--,                         
+         ,---._                ,---.'|                         
+       .-- -.' \               |   | :                         
+       |    |   :              :   : |                         
+       :    ;   |         ,--, |   ' :      ,---.              
+       :        |       ,'_ /| ;   ; '     '   ,'\ ,--,  ,--,  
+       |    :   :  .--. |  | : '   | |__  /   /   ||'. \/ .`|  
+       :         ,'_ /| :  . | |   | :.'|.   ; ,. :'  \/  / ;  
+       |    ;   ||  ' | |  . . '   :    ;'   | |: : \  \.' /   
+   ___ l         |  | ' |  | | |   |  ./ '   | .; :  \  ;  ;   
+ /    /\    J   ::  | : ;  ; | ;   : ;   |   :    | / \  \  \  
+/  ../  `..-    ,'  :  `--'   \|   ,/     \   \  /./__;   ;  \ 
+\    \         ; :  ,      .-./'---'       `----' |   :/\  \ ; 
+ \    \      ,'   `--`----'                       `---'  `--`  
+  "---....--'
+
+"""
+
+# logo credits: https://patorjk.com/software/taag/#p=display&f=3D%20Diagonal&t=JuLox
+
 
 end
