@@ -175,3 +175,48 @@ struct EOF <: Token
     line::Int
 end
 
+# Once again I am sorry for doing this with copilot but I am lazy.
+# I also don't like the idea of storing this redundantly in every instance
+# So methods is what we will do
+
+lexeme(::LeftParen) = "("
+lexeme(::RightParen) = ")"
+lexeme(::LeftBrace) = "{"
+lexeme(::RightBrace) = "}"
+lexeme(::Comma) = ","
+lexeme(::Dot) = "."
+lexeme(::Minus) = "-"
+lexeme(::Plus) = "+"
+lexeme(::Semicolon) = ";"
+lexeme(::Slash) = "/"
+lexeme(::Star) = "*"
+lexeme(::Bang) = "!"
+lexeme(::BangEqual) = "!="
+lexeme(::Equal) = "="
+lexeme(::EqualEqual) = "=="
+lexeme(::Greater) = ">"
+lexeme(::GreaterEqual) = ">="
+lexeme(::Less) = "<"
+lexeme(::LessEqual) = "<="
+lexeme(x::Identifier) = x.name
+lexeme(x::StringLiteral) = x.value
+lexeme(x::NumberLiteral) = x.value
+lexeme(::And) = "and"
+lexeme(::Class) = "class"
+lexeme(::Else) = "else"
+lexeme(::False) = "false"
+lexeme(::Fun) = "fun"
+lexeme(::For) = "for"
+lexeme(::If) = "if"
+lexeme(::Nil) = "nil"
+lexeme(::Or) = "or"
+lexeme(::Print) = "print"
+lexeme(::Return) = "return"
+lexeme(::Super) = "super"
+lexeme(::This) = "this"
+lexeme(::True) = "true"
+lexeme(::Var) = "var"
+lexeme(::While) = "while"
+lexeme(::EOF) = "EOF"
+
+
