@@ -77,6 +77,16 @@ function scan_tokens(src_code)
             else
                 push!(tokens, Greater(line_num))
             end
+
+        elseif c == '/'
+            if match_next_char('/', i)
+                while i <= length(src_code) && src_code[i] != '\n'
+                    i += 1 # skip everythin for this line
+                end
+            else
+                push!(tokens, Slash(line_num))
+            end
+            
         else
             has_error = true
             report_error(line_num, "Unexpected character $c")
@@ -86,6 +96,8 @@ function scan_tokens(src_code)
         i += 1
         
     end
+
+    # println(tokens)
     
     return tokens, has_error
 end
