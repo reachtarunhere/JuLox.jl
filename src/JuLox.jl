@@ -52,10 +52,8 @@ julox_logo = raw"""
 
 function run(code)
     has_error = false # TODO: replace this with some real checking
+    Scanner.scan_tokens(code)
     has_error && exit(65)
 end
-
-report_error(line_no, message) = println("[line $line_no] Error: $message")
-
     
 end
